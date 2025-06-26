@@ -1,3 +1,31 @@
+All files are being released under the GPL 3 License shown below.
+
+Files in  "OriginalMatlab" folder are copyright:
+
+    Somersalo, Calvetti
+        DiffusionMatrixDistr.m
+        DiffusionMatrixInsideDistr.m
+        DiffusionMatrixOutsideDistr.m
+        ReactionDiffusionDistrRHS.m
+        SingleSpeciesDiffMatDistr.m
+
+    Somersalo, Calvetti and Occhipinti
+        ModelParametersDistr_DE_paper_3Buffers.m
+        ModelParametersDistr_DE_paper.m
+
+    Occhipinti
+        Simulate_CO2_addition_ONLY_cleaned.m
+        create_fig*.m
+
+Some of the files from "OriginalMatlab" have been copied into the main
+folder and slightly modified to work with the GUI.
+
+All remaining files not in "OriginalMatlab" or their derivatives in the
+main folder are copyright Huffman, Boron.
+
+
+----------------------------------------------------------------------
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 

@@ -1,0 +1,7 @@
+--ignore-dir=venv_modelling_py39
+--ignore-dir=venv_modelling_py310
+--ignore-dir=venv_py310
+--ignore-dir=venv_310
+--ignore-dir=modvenv
+--ignore-dir=venv
+--ignore-file=ext:ipynb
