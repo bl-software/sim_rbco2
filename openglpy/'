@@ -1,0 +1,133 @@
+from core.base     import Base
+from core.renderer import Renderer
+from core.scene    import Scene
+from core.camera   import Camera
+from core.mesh     import Mesh
+from core.texture  import Texture
+
+from extras.axesHelper import AxesHelper
+from extras.gridHelper import GridHelper
+from extras.movementRig import MovementRig
+from extras.directionalLightHelper import DirectionLightHelper
+from extras.pointLightHelper import PointLightHelper
+from math import pi
+from math import sin
+#Geometric
+from geometry.rectangleGeometry import RectangleGeometry
+from geometry.boxGeometry import BoxGeometry
+
+from geometry.polygonGeometry import PolygonGeometry
+
+#Parametric
+from geometry.planeGeometry import PlaneGeometry
+from geometry.ellipsoidGeometry import EllipsoidGeometry
+from geometry.sphereGeometry import SphereGeometry
+
+from geometry.cylinderGeometry import CylinderGeometry
+from geometry.prismGeometry import PrismGeometry
+from geometry.coneGeometry import ConeGeometry
+from geometry.pyramidGeometry import PyramidGeometry
+
+from light.ambientLight import AmbientLight
+from light.directionalLight import DirectionalLight
+from light.pointLight import PointLight
+
+from material.surfaceMaterial import SurfaceMaterial
+from material.lineMaterial import LineMaterial
+from material.pointMaterial import PointMaterial
+from material.textureMaterial import TextureMaterial
+from material.flatMaterial import FlatMaterial
+from material.lambertMaterial import LambertMaterial
+from material.phongMaterial import PhongMaterial
+# render basic scene
+width=1800
+height=1600
+class Test(Base):
+    def initialize(self):
+        print('Initializing program...')
+
+        self.renderer= Renderer()
+        self.scene= Scene()
+        self.camera= Camera( aspectRatio= width/height )
+        self.camera.setPosition([0, 0, 2.5])
+
+        #self.rig= MovementRig()
+        #self.rig.add( self.camera )
+        #self.rig.setPosition( [0, 1, 8] )
+        #self.scene.add( self.rig )
+
+        #skyGeometry= SphereGeometry(radius=50)
+        #skyMaterial= TextureMaterial(Texture('images/sky.jpg'))
+        #sky=Mesh(skyGeometry,skyMaterial)
+        #self.scene.add(sky)
+        #grassGeometry=RectangleGeometry(width=100, height=100)
+        #grassMaterial=TextureMaterial(Texture('images/grass.jpg'))
+        #grass=Mesh(grassGeometry, grassMaterial)
+        #grass.rotateX(-3.14/2)
+        #self.scene.add(grass)
+        #grid= GridHelper( gridColor=[0,0,0], centerColor=[1,1,0] )
+        #grid.rotateX(-3.14/2)
+        #self.scene.add(grid)
+
+        self.ambient= AmbientLight( color=[0.3, 0.3, 0.3] )
+        self.scene.add( self.ambient )
+
+        #self.directional= DirectionalLight( color=[0.8, 0.8, 0.8], direction=[-1,-1,-2] )
+        #self.scene.add( self.directional )
+        #directHelper= DirectionLightHelper(self.directional)
+        #self.directional.setPosition([3,2,0])
+        #self.directional.add( directHelper )
+
+        self.point= PointLight( color=[1, 1, 1], position=[1.2,1.2,-0.3] )
+        self.scene.add( self.point )
+        pointHelper= PointLightHelper( self.point )
+        self.point.add(pointHelper)
+
+        colorTex = Texture( 'images/brick-wall.jpg')
+        bumpTex  = Texture( 'images/brick-wall-normal-map.jpg')
+
+        geometry=RectangleGeometry(width=2, height=2)
+        bumpMaterial= LambertMaterial(
+            texture= colorTex,
+            bumpTexture = bumpTex,
+            properties= {'bumpStrength':1}
+        )
+        mesh= Mesh(geometry, bumpMaterial)
+        self.scene.add(mesh)
+
+
+#        #sphereGeometry= SphereGeometry(radiusSegments=5, heightSegments=3)
+#        sphereGeometry= SphereGeometry()#radiusSegments=25, heightSegments=10)
+#        flatMaterial= FlatMaterial( properties={'baseColor':[0.6,0.2,0.2]} )
+
+#        grid= Texture('images/grid.jpg')
+#        lambertMaterial= LambertMaterial(texture=grid)
+#        phongMaterial= PhongMaterial(properties={'baseColor':[0.5,0.5,1]})
+
+#        print('SP1')
+#        self.sphere1= Mesh(sphereGeometry, flatMaterial)
+#        self.sphere1.setPosition([-2.2,2,0])
+#        self.scene.add(self.sphere1)
+#        print('SP2')
+#        self.sphere2= Mesh(sphereGeometry, lambertMaterial)
+#        self.sphere2.setPosition([0,2,0])
+#        self.scene.add(self.sphere2)
+#        print('SP3')
+#        self.sphere3= Mesh(sphereGeometry, phongMaterial)
+#        self.sphere3.setPosition([2.2,2,0])
+#        self.scene.add(self.sphere3)
+        
+    def update(self):
+        #self.sphere1.rotateY( 0.05514 )
+        #self.sphere2.rotateX( 0.04514 )
+        #self.sphere3.rotateZ( 0.03514 )
+        #self.rig.update(self.input, self.deltaTime)
+        #self.directional.setDirection( [-1, sin(0.7*self.time), -2] )
+        ppos= self.point.getPosition()
+        self.point.setPosition( [ppos[0], 4*sin(self.time), 2*sin(0.7*self.time)])#ppos[2])] )
+        #self.mesh.rotateX( 0.03137 )
+        #self.mesh2.rotateZ(0.01)
+        self.renderer.render( self.scene, self.camera )
+
+# instantiate this class and run the prog
+Test( screenSize=[width,height] ).run()

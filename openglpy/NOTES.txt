@@ -1,0 +1,23 @@
+At 6.4.2 pg 282
+
+Trying to get modern Stack397 version working.
+
+Oddness calling VERSION/GL_2_9
+
+and Context error.
+
+EGL made it work
+
+after addig IsSHownOnScreen stuff`
+
+
+PYOPENGL_PLATFORM=egl python stack39734211.py
+Now try test3.py and test4X.py
+Must get BaseWX to work
+comparet the two
+
+UNDO MOST OF LAST COMMIT _ LOTS OF TESTING STUFF
+
+test3 works - now working thru other uses of pygame like right now "input"
+
+test46 comes up - working on  getting movementrig and inputWX working 
