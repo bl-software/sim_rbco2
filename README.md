@@ -8,7 +8,7 @@ The goal was for this code to be production ready.  However, due to funding cuts
 If you want to run JTB or AJP simulations, I recommend that you run the version from those github repos. These have the most development completed.  That code needs to be merged back into the development version.
 
 # Setup in Ubuntu Linux (24.04):
-The command "PYOPENGL_PLATFORM=egl python mgui.py --simtype=2" will make the software run, ready for an RBCO2 simulation, assuming the python (venv) and Linux (apt) environments are properly setup.  A python virtual env should be setup, then use the reqs.txt file to install the reqs.  The code requires MATLAB as of this version.  There is code to make it work with Octave, though it is untested, as Octave had an issue when this part was added, the ode15s equivalent solver was not working.  You must pip install the Matlab engine, see Mathworks for instructions.
+The command "PYOPENGL_PLATFORM=egl python mgui.py --simtype=2" will make the software run, ready for an RBCO2 simulation, assuming the python (venv) and Linux (apt) environments are properly setup, SEE INSTALL FILE.  A python virtual env should be setup, then use the reqs.txt file to install the reqs.  The code requires MATLAB as of this version.  There is code to make it work with Octave, though it is untested, as Octave had an issue when this part was added, the ode15s equivalent solver was not working.  You must pip install the Matlab engine, see Mathworks for instructions.
 
 The code will run the simulations, but there is no guarantee the figures will match what will be in the RBCO2 Paper.  I know some of the figure numbers have been changed in the final version of the paper and these now differ from the code.
 
@@ -63,9 +63,10 @@ Edit the file Params/Sim_3__RBCO2/Paper_1__RBCO2/Params_8__Fig_5.py
 -- set run=1  
 save  
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=4 --sdp=testSS1/ --dofig='Fig 5' --dosim```
-edit again
--- set run=2
-save
+
+edit again  
+-- set run=2  
+save  
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=4 --sdp=testSS2/ --dofig='Fig 5' --dosim```
 the result will be 2 files similar to:
     MouseC57BL_6Case_AvgWT_r1_2.csv
