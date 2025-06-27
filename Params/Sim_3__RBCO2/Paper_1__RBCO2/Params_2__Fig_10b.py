@@ -2,7 +2,7 @@
 # Insert unicode chars in VIM with: insert mode, hit Ctrl-V and type hex unicode "U0001D458"
 from Params.Sim_3__RBCO2.Param_Defaults_RBCO2 import *
 from Params.Params import *
-''' Fig 3b - sensitivity khbo2 vs DO2i '''
+''' Fig 10b - sensitivity khbo2 vs DO2i '''
 
 thisS='Mouse' 
 thisGB='C57BL/6Case_RXO_116'
@@ -35,6 +35,6 @@ fig_param_list= build_param_list(param_list_RBCO2,fig_params)
 
 fParams= {\
     'params':create_params( fig_param_list ),
-    'valid_figs': ['Fig 3b'],
+    'valid_figs': ['Fig 10b'],
     'fname':__file__,
 }
