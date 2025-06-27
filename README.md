@@ -15,14 +15,14 @@ The code will run the simulations, but there is no guarantee the figures will ma
 One significant bug is the OpenGL context switch.  You can switch between JTB and AJP, and then to RBC, but once the RBC has been selected, you cannot go back to JTB or AJP.  So simply restart the program.
 
 
-```PYOPENGL_PLATFORM=egl python mgui.py --help gives all the option
+```PYOPENGL_PLATFORM=egl python mgui.py --help gives all the option```
 The development version has a bit freindlier command line interface.
 
 # Running in Ubuntu Linux (24.04):
 A quick runthrough.
 Start the code
 
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2```
 
 Click "Run Simulation" big red button.
 Create a folder to hold the simulation data.
@@ -36,16 +36,16 @@ Last I checked the code will run in python under Anaconda.  Use conda to install
 # More Examples
 To automatically run the sims for 3a 3b 3c 3d -> Renamed in paper to 9a 9b 9c 9d
 this creates the data folder, runs the sim, and generates the figure
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=0 --sdp=testf3a/ --dofig='Fig 3a' --dosim
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=0 --sdp=testf3a/ --dofig='Fig 3a' --dosim```
 
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=1 --sdp=testf3b/ --dofig='Fig 3b' --dosim
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=1 --sdp=testf3b/ --dofig='Fig 3b' --dosim```
 
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=2 --sdp=testf3c/ --dofig='Fig 3c' --dosim
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=2 --sdp=testf3c/ --dofig='Fig 3c' --dosim```
 
-> PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=3 --sdp=testf3d/ --dofig='Fig 3d' --dosim
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=3 --sdp=testf3d/ --dofig='Fig 3d' --dosim```
 
 This will regenerate the figure on an existing data folder
-> PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=0 --sdp=testf3a/ --dofig='Fig 3a'
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=0 --sdp=testf3a/ --dofig='Fig 3a'```
 
 This will remove the data in the data folder and rerun the sim and gen the figure (good for testing)
 > rm testf3d/*; PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=3 --sdp=testf3d/ --dofig='Fig 3d' --dosim
