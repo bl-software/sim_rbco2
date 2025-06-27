@@ -48,11 +48,11 @@ This will regenerate the figure on an existing data folder
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=0 --sdp=testf3a/ --dofig='Fig 3a'```
 
 This will remove the data in the data folder and rerun the sim and gen the figure (good for testing)
-> rm testf3d/*; PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=3 --sdp=testf3d/ --dofig='Fig 3d' --dosim
-> rm testf3c/*; PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=2 --sdp=testf3c/ --dofig='Fig 3c' --dosim
+```rm testf3d/*; PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=3 --sdp=testf3d/ --dofig='Fig 3d' --dosim```
+```rm testf3c/*; PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=2 --sdp=testf3c/ --dofig='Fig 3c' --dosim```
 
 This will simply open the app set to do RBC sims related to paper 1
-> PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0```
 
 Create Sigmoid similar to Fig 5 for any strains
 requires 2 runs for first half of the point and second half of the points. To much data for the computer to run all at once.
@@ -60,11 +60,11 @@ Edit the file Params/Sim_3__RBCO2/Paper_1__RBCO2/Params_8__Fig_5.py
 -- in extras comment out FIG5
 -- set run=1
 save
-> PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=4 --sdp=testSS1/ --dofig='Fig 5' --dosim
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=4 --sdp=testSS1/ --dofig='Fig 5' --dosim```
 edit again
 -- set run=2
 save
-> PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=4 --sdp=testSS2/ --dofig='Fig 5' --dosim
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=4 --sdp=testSS2/ --dofig='Fig 5' --dosim```
 the result will be 2 files similar to:
     MouseC57BL_6Case_AvgWT_r1_2.csv
     MouseC57BL_6Case_AvgWT_r2_2.csv
