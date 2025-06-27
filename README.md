@@ -48,18 +48,20 @@ This will regenerate the figure on an existing data folder
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=0 --sdp=testf3a/ --dofig='Fig 3a'```
 
 This will remove the data in the data folder and rerun the sim and gen the figure (good for testing)
+
 ```rm testf3d/*; PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=3 --sdp=testf3d/ --dofig='Fig 3d' --dosim```
+
 ```rm testf3c/*; PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=2 --sdp=testf3c/ --dofig='Fig 3c' --dosim```
 
 This will simply open the app set to do RBC sims related to paper 1
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0```
 
-Create Sigmoid similar to Fig 5 for any strains
-requires 2 runs for first half of the point and second half of the points. To much data for the computer to run all at once.
-Edit the file Params/Sim_3__RBCO2/Paper_1__RBCO2/Params_8__Fig_5.py
--- in extras comment out FIG5
--- set run=1
-save
+# Create Sigmoid similar to Fig 5 for any strains
+Requires 2 runs for first half of the point and second half of the points. To much data for the computer to run all at once.
+Edit the file Params/Sim_3__RBCO2/Paper_1__RBCO2/Params_8__Fig_5.py  
+-- in extras comment out FIG5  
+-- set run=1  
+save  
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=4 --sdp=testSS1/ --dofig='Fig 5' --dosim```
 edit again
 -- set run=2
@@ -80,7 +82,7 @@ Try to follow the file hierarchy
 Params_<n>__<name>.py
 n= number in the app
 name = often the figure number in the paper - but also your custom name if it is not in the paper
-> tree output
+```tree output
 └── Sim_3__RBCO2
     ├── __init__.py
     ├── Paper_1__RBCO2
@@ -97,5 +99,5 @@ name = often the figure number in the paper - but also your custom name if it is
     │   ├── Params_2__SigmoidSensitivitySweep.py
     │   ├── Params_3__SigPLocator.py
     ├── Param_Defaults_RBCO2.py
-
+```
 
