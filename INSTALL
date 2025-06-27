@@ -1,0 +1,39 @@
+These are all the command run to setup a new computer to run simulations.
+Included are basic things like setting up openssh and editors which can be skipped if you wish
+
+Install Ubuntu 24.04 on a new computer or VM.
+
+Install Matlab on the computer
+    I recommend installing to local user - makes python engine easier to install
+
+Download wxpython from https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-24.04/
+
+Then from home folder of user with sudo privileges:
+
+Basic stuff
+> sudo apt install openssh-server git python3-venv python3-dev vim-gtk3 build-essential libcairo2 libcairo2-dev libsdl2-dev tree ack
+> ssh-keygen 
+
+GUI Software
+> git clone https://github.com/bl-software/sim_rbco2.git
+> cd sim_rbco2-main/
+> python3 -m venv venv
+> source venv/bin/activate
+
+>  gvim reqs.txt 
+Comment out wxpython and matlabengine
+>  pip install -r reqs.txt 
+>  pip install ~/Downloads/wxpython-4.2.3-cp312-cp312-linux_x86_64.whl 
+
+
+ONE OF THESE SHOULD INSTALL MATLAB PYTHON ENGINE DEPENDING ON WHERE YOU INSTALLED MATLAB
+This has changed over the years, very finicky
+>  cd /usr/local/MATLAB/R2024b/extern/engines/python/
+>  pip install .
+>  pip install --user .
+>  sudo /home/dhuffman/sim_rbco2-main/venv/bin/python -m pip install .
+
+Run it watch for errros in installation
+>  PYOPENGL_PLATFORM=egl python mgui.py --simtype=2
+
+
