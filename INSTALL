@@ -16,7 +16,7 @@ Basic stuff
 
 GUI Software
 > git clone https://github.com/bl-software/sim_rbco2.git
-> cd sim_rbco2-main/
+> cd sim_rbco2/
 > python3 -m venv venv
 > source venv/bin/activate
 
@@ -29,10 +29,10 @@ Comment out wxpython and matlabengine
 ONE OF THESE SHOULD INSTALL MATLAB PYTHON ENGINE DEPENDING ON WHERE YOU INSTALLED MATLAB
 This has changed over the years, very finicky
 >  cd /usr/local/MATLAB/R2024b/extern/engines/python/
->  pip install .
->  pip install --user .
->  sudo /home/dhuffman/sim_rbco2-main/venv/bin/python -m pip install .
-
+THIS ONE WORKED MOST RECENTLY
+*** > sudo /home/USERNAME/sim_rbco2/venv/bin/python -m pip install .
+XXX >  pip install .
+XXX >  pip install --user .
 Run it watch for errros in installation
 >  PYOPENGL_PLATFORM=egl python mgui.py --simtype=2
 
