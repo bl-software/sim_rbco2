@@ -37,8 +37,11 @@ Last I checked the code will run in python under Anaconda.  Use conda to install
 To automatically run the sims for 3a 3b 3c 3d -> Renamed in paper to 9a 9b 9c 9d
 this creates the data folder, runs the sim, and generates the figure
 > PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=0 --sdp=testf3a/ --dofig='Fig 3a' --dosim
+
 > PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=1 --sdp=testf3b/ --dofig='Fig 3b' --dosim
+
 > PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=2 --sdp=testf3c/ --dofig='Fig 3c' --dosim
+
 > PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0 --fig=3 --sdp=testf3d/ --dofig='Fig 3d' --dosim
 
 This will regenerate the figure on an existing data folder
