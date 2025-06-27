@@ -1,5 +1,14 @@
 All files are being released under the GPL 3 License shown below.
 
+LAST MINUTE UPDATE June 2025 - code dump
+
+All the original .m files are copyrights of Somersalo, Calvetti and Occhipinti
+The owners should update this if they are specific, I didn't get answers.
+For the RBC version ther are similar files to the below with _RBC in the name.
+
+The OpenGL code in openglpy/ is all based on the textbook "Developing Graphics Frameworks with Python and OpenGL" https://library.oapen.org/handle/20.500.12657/48838.  There are modified files authored by Huffman, to work with wxpython.
+
+
 Files in  "OriginalMatlab" folder are copyright:
 
     Somersalo, Calvetti
