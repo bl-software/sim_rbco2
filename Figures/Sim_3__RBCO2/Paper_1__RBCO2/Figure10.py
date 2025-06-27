@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from Figures.Sim_3__RBCO2.Paper_1__RBCO2.RBCO2_Figs import RBCO2_Fig
 from support import *
 
-class Fig3(RBCO2_Fig):
+class Fig10(RBCO2_Fig):
     def rbc_styles(self,n=1):
         p='purple'
         m='mediumpurple'
@@ -30,10 +30,10 @@ class Fig3(RBCO2_Fig):
         sr=sim_results
 
         ptext,atext={
-            '3a': ('A', r'Fig 3/9a. 𝑘_{HbO_2} vs. (D_{O_2})_o'  ),
-            '3b': ('B', r'Fig 3/9b. 𝑘_{HbO_2} vs. (D_{O_2})_i'  ),
-            '3c': ('C', r'Fig 3/9c. 𝑘_{HbO_2} vs. (D_{HbO_2})_i'),
-            '3d': ('D', r'Fig 3/9d. 𝑘_{HbO_2} vs. (D_{Hb})_i'   ),
+            '10a': ('A', r'Fig 10a. 𝑘_{HbO_2} vs. (D_{O_2})_o'  ),
+            '10b': ('B', r'Fig 10b. 𝑘_{HbO_2} vs. (D_{O_2})_i'  ),
+            '10c': ('C', r'Fig 10c. 𝑘_{HbO_2} vs. (D_{HbO_2})_i'),
+            '10d': ('D', r'Fig 10d. 𝑘_{HbO_2} vs. (D_{Hb})_i'   ),
         }[fignum]
 
         self.fp= self.FigProps(
@@ -72,10 +72,10 @@ class Fig3(RBCO2_Fig):
         dhbo2i_ctrl=6.07e-8
         dhbi_ctrl  =6.07e-8
         diffusion,diffctrl= {
-            '3a': (sr.rp['D_O2out'  ], do2o_ctrl  ),
-            '3b': (sr.rp['D_O2in'   ], do2i_ctrl  ),
-            '3c': (sr.rp['D_HbO2in' ], dhbo2i_ctrl),
-            '3d': (sr.rp['D_Hbin'   ], dhbi_ctrl  ),
+            '10a': (sr.rp['D_O2out'  ], do2o_ctrl  ),
+            '10b': (sr.rp['D_O2in'   ], do2i_ctrl  ),
+            '10c': (sr.rp['D_HbO2in' ], dhbo2i_ctrl),
+            '10d': (sr.rp['D_Hbin'   ], dhbi_ctrl  ),
         }[fignum]
 
         hprint(diffusion)
