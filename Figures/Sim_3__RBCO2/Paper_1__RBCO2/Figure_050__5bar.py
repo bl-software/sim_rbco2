@@ -3,9 +3,9 @@ from Figures.Sim_3__RBCO2.Paper_1__RBCO2.RBCO2_Figs import RBCO2_Fig
 class Fig(RBCO2_Fig):
     def __init__(self,run_time,run_data,run_params,*args,**kwargs):
         super().__init__(run_time,run_data,run_params,'5',args,kwargs)
-#def fig__RBCO2_fig_6bar(self, fignum, rp):
+#def fig__RBCO2_fig_5bar(self, fignum, rp):
         ''' bar plot with WT, AQP, RhAG, dKO '''
-        print('''FIG 6 bar plot with WT, AQP, RhAG, dKO ''')
+        print('''FIG 5 bar plot with WT, AQP, RhAG, dKO ''')
         plot_rows=1
         plot_cols=1
 

@@ -4,7 +4,7 @@ import matplotlib as mpl
 from support import *
 from Figures.Sim_3__RBCO2.Paper_1__RBCO2.RBCO2_Figs import RBCO2_Fig
 
-class Fig5(RBCO2_Fig):
+class Fig6(RBCO2_Fig):
     ''' sigmoid per Species
         kHbO2(y) vs Pm_O2(x)
     '''
@@ -14,7 +14,7 @@ class Fig5(RBCO2_Fig):
         sr=sim_results
 
         extras= sr.cp['Extra']()[0]
-        FIG5       = 'FIG5'        in extras
+        FIG6       = 'FIG6'        in extras
         DEBUGHBS   = 'DEBUGHBS'    in extras
         FULLSIGMOID= 'FULLSIGMOID' in extras
 
@@ -25,15 +25,15 @@ class Fig5(RBCO2_Fig):
         except KeyError:
             titlepart=''
         titlepart=f'{titlepart}\n'
-        title1=f'Fig 5. {titlepart}\n{ft.title_kvperms}'
-        title2=f'Fig 5. {titlepart}\n{ft.title_hbsat}'
+        title1=f'Fig 6. {titlepart}\n{ft.title_kvperms}'
+        title2=f'Fig 6. {titlepart}\n{ft.title_hbsat}'
 
 #        b= self.shades_ajp8o
 #        o= self.shades_ajp8b
         self.fp= self.FigProps(
             nrows= 1,
             ncols= 1,
-            title= '',#None#f'Fig 5. {titlepart}\n{ft.title_kvperms}'
+            title= '',#None#f'Fig 6. {titlepart}\n{ft.title_kvperms}'
             plot_d={ 'colors'   : (self.shades_ajp8o,),
                      'remborder': ['top','right'],
                      #'tickspos' : 'both',
@@ -104,8 +104,8 @@ class Fig5(RBCO2_Fig):
             self.set_legend(ax_hbsat) 
 
         #fpp.logx= 'log'
-        if fignum == '5':
-            hprint('FN=5')
+        if fignum == '6':
+            hprint('FN=6')
             fpp.xvar= pm_o2s
             fpp.yvar= k_37s
             self.plot_t(ax_sig,fpp)
@@ -119,15 +119,15 @@ class Fig5(RBCO2_Fig):
             ax_sig.spines['bottom'].set_linewidth(3)
             ax_sig.spines['left'].set_linewidth(3)
 
-            if FIG5:
-                f5_pmo2=  [     0.0143,     0.0281,     0.0376,    0.0673,  0.0693,    0.0983,     0.1213, 0.1546,         26.63 ]
-                f5_name=  ['dKO+pCMBS', 'WT+pCMBS', 'dKO+DIDS', 'WT+DIDS',   'dKO', 'RHag-/-', 'Aqp1 -/-',   'WT', 'H20 Membrane']
-                f5_k37=   [     0.8688,     1.5282,     1.8938,    2.7533,  2.7989,    3.3582,     3.6828, 4.0358,         5.9953]
-                #f5_k37=   [     0.6877,     1.2023,     1.4937,    2.1783,  2.2151,    2.6579,     2.9191, 3.2059,         4.8297]
-                f5colors= [   'purple',        'g',   'purple',       'g', 'purple',      'b',        'r',    'g',    'steelblue']
-                f5extraxy=[       None,       None,       None,      None,   (0,15),     None,       None,   None,           None]
+            if FIG6:
+                f6_pmo2=  [     0.0143,     0.0281,     0.0376,    0.0673,  0.0693,    0.0983,     0.1213, 0.1546,         26.63 ]
+                f6_name=  ['dKO+pCMBS', 'WT+pCMBS', 'dKO+DIDS', 'WT+DIDS',   'dKO', 'RHag-/-', 'Aqp1 -/-',   'WT', 'H20 Membrane']
+                f6_k37=   [     0.8688,     1.5282,     1.8938,    2.7533,  2.7989,    3.3582,     3.6828, 4.0358,         5.9953]
+                #f6_k37=   [     0.6877,     1.2023,     1.4937,    2.1783,  2.2151,    2.6579,     2.9191, 3.2059,         4.8297]
+                f6colors= [   'purple',        'g',   'purple',       'g', 'purple',      'b',        'r',    'g',    'steelblue']
+                f6extraxy=[       None,       None,       None,      None,   (0,15),     None,       None,   None,           None]
                 #This is for the colored markers from manuscript
-                for p,k,c,exy,n in zip(f5_pmo2,f5_k37,f5colors,f5extraxy,f5_name):
+                for p,k,c,exy,n in zip(f6_pmo2,f6_k37,f6colors,f6extraxy,f6_name):
                     ax_sig.plot(p,k,color=c,marker='o',markersize=15, clip_on=False)
                     #extray=0
                     #if (k - last_k) < 0.1:
@@ -222,7 +222,7 @@ class Fig5(RBCO2_Fig):
         outcol = sr.cp['OutCol']()[0]
         outd= {f'{outcol}_K37':k_37s}
         
-        if fignum in ['5','SigPLocator']:
+        if fignum in ['6','SigPLocator']:
             thisdf= pd.DataFrame(
                 outd,
                 index=pm_o2s,
@@ -282,7 +282,7 @@ class Fig5(RBCO2_Fig):
         colors_to_pop=[]
         for i,ri in enumerate(range(n_runs)):
             if not colors_to_pop:
-                colors_to_pop= f5colors.copy()
+                colors_to_pop= f6colors.copy()
 
             cur_color=colors_to_pop.pop(0)
             cur_coloralpha=mpl.colors.to_rgba(cur_color, 0.5)
