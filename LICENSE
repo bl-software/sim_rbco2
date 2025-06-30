@@ -23,8 +23,15 @@ Files in  "OriginalMatlab" folder are copyright:
         ModelParametersDistr_DE_paper.m
 
     Occhipinti
+        Calculate_t37_JP.m
+        Simulate_O2_Efflux.m
         Simulate_CO2_addition_ONLY_cleaned.m
+        ReactionDiffusionDistrRHS_RBC.m
+        DiffusionMatrixDistr_RBC.m
+        ModelParameters_RBC_ok_PmO2_Params_ok_JP.m
+        ModelParameters_RBC_ok_PmO2_Params_ok_klysate_JP.m
         create_fig*.m
+        Fig_4_7_JP.m
 
 Some of the files from "OriginalMatlab" have been copied into the main
 folder and slightly modified to work with the GUI.
