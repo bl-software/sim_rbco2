@@ -3045,6 +3045,7 @@ class ModelApp(object):
                 fig_name=fig_name.removeprefix('Fig ')
             print(f'{self.cur_sim_type}, *** {self.cur_paper}, ### {fig_name}')
             #Figs[self.cur_sim_type][self.cur_paper][fig_name](self.run_time,self.run_data,self.run_params, CHART_DEBUGGING)
+            print('Figlist=\n')
             pprint.pp(Figs)
             Figs[self.cur_sim_type][self.cur_paper][fig_name](sim_results, CHART_DEBUGGING)
 #            {\

@@ -195,7 +195,7 @@ fig_param_list= build_param_list(param_list_RBCO2,fig_params)
 
 fParams= {\
     'params':create_params( fig_param_list ),
-    'valid_figs': ['Fig 5', 'Fig SigPLocator'],
+    'valid_figs': ['Fig 6', 'Fig SigPLocator'],
     'fname':__file__,
 }
 

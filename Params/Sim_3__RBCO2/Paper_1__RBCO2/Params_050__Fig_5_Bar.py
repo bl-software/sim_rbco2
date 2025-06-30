@@ -3,12 +3,12 @@
 from Params.Sim_3__RBCO2.Param_Defaults_RBCO2 import *
 from Params.Params import *
 
-''' Fig 6 - bar graph of 4 types '''
+''' Fig 5 - bar graph of 4 types '''
 
 sp= 'Mouse'
 
-#bk= 'C57BL/6Case_RXO_116'
-bk= 'C57BL/6Case_DEH_goodklys'
+#bk='C57BL/6Case_11dot6_Fig5A'
+bk='C57BL/6Case_Indiv_klys_Fig5B'
 
 #gt=( 'WT',)
 #gt= ('AQP1-KO',)
@@ -44,7 +44,7 @@ fig_param_list= build_param_list(param_list_RBCO2,fig_params)
 
 fParams= {\
     'params':create_params( fig_param_list ),
-    'valid_figs': ['Fig 6 Bar'],
+    'valid_figs': ['Fig 5bar'],
     'fname':__file__,
 }
 

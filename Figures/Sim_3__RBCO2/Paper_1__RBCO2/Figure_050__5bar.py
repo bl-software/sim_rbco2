@@ -1,7 +1,14 @@
 from Figures.Sim_3__RBCO2.Paper_1__RBCO2.RBCO2_Figs import RBCO2_Fig
 
 class Fig(RBCO2_Fig):
-    def __init__(self,run_time,run_data,run_params,*args,**kwargs):
+
+    def __init__(self,sim_results,*args,**kwargs):
+        super().__init__(sim_results,'10a',args,kwargs)
+    #def __init__(self,run_time,run_data,run_params,*args,**kwargs):
+        return
+        #TODO this needs edited to new system See Fig 6 and 10
+        #TODO and prior to this still sending old param
+
         super().__init__(run_time,run_data,run_params,'5',args,kwargs)
 #def fig__RBCO2_fig_5bar(self, fignum, rp):
         ''' bar plot with WT, AQP, RhAG, dKO '''

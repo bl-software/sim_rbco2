@@ -53,7 +53,7 @@ import math
 extras=[\
     'FULLSIGMOID', # sets axes to full sig, leave off if finding perms and want defaults for smaller run
 #    'DEBUGHBS',    # adds t1,t2, y1,y2 and lines for interpolation in hbsat
-    'FIG5', # exact fig and points from manuscript
+#    'FIG6', # exact fig and points from manuscript
 ]
 ### Computer runs out of memory so have to break ( as of 2025 in to 2 parts )
 #nbreaks=3
@@ -75,7 +75,7 @@ def testtime(v):
         if v < tmk:
             return tmv
 
-if 'FIG5' in extras:
+if 'FIG6' in extras:
     fulllogspace= pts41_sig
     #fulllogspace= [0.001, 0.0143, 0.0281, 0.0376, 0.0673, 0.0693, 0.0983, 0.1213, 0.1546, 0.5, 1.0, 5.0, 10.0, 26.63]
     tmaxs=[ testtime(v) for v in fulllogspace ]
@@ -85,8 +85,8 @@ else:
     fulllogspace= full_82pt_sig
     tmaxs=[15.0     ]
 
-    run=1
-    #run=2
+    #run=1
+    run=2
     #run=3
     
 start= (run-1) * maxperbreak
@@ -104,12 +104,10 @@ thisS='Mouse'
 
 #thisGB='Human'
 thisGB='C57BL/6Case_Avg'
-#thisGB='C57BL/6Case_RXO_116'
 #thisGB='C57BL/6Case_Ctrl_6J_Pan'
 #thisGB='C57BL/6J_Pan'
 #thisGB='C57BL/6Case_Ctrl_BalbC_Pan'
 #thisGB='BalbC/J_Pan'
-#thisGB='C57BL/6Case_RXO_116'
 #thisGB='AE1'
 #thisGB='CAST/EIJ'
 #thisGB='Human'
@@ -178,7 +176,7 @@ fig_param_list= build_param_list(param_list_RBCO2,fig_params)
 
 fParams= {\
     'params':create_params( fig_param_list ),
-    'valid_figs': ['Fig 5'],
+    'valid_figs': ['Fig 6'],
     'fname':__file__,
 }
 

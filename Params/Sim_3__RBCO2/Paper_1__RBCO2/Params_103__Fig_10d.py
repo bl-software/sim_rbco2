@@ -5,7 +5,7 @@ from Params.Params import *
 ''' Fig 10d - sensitivity khbo2 vs DHbi '''
 
 thisS='Mouse' 
-thisGB='C57BL/6Case_RXO_116'
+thisGB='C57BL/6Case_11dot6_Fig5A'
 thisGT='WT'
 
 species_choices =list(RBCO2_LUT.keys())
