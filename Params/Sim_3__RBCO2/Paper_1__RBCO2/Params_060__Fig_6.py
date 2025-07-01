@@ -53,7 +53,7 @@ import math
 extras=[\
     'FULLSIGMOID', # sets axes to full sig, leave off if finding perms and want defaults for smaller run
 #    'DEBUGHBS',    # adds t1,t2, y1,y2 and lines for interpolation in hbsat
-#    'FIG6', # exact fig and points from manuscript
+    'FIG6', # exact fig and points from manuscript
 ]
 ### Computer runs out of memory so have to break ( as of 2025 in to 2 parts )
 #nbreaks=3
@@ -85,8 +85,8 @@ else:
     fulllogspace= full_82pt_sig
     tmaxs=[15.0     ]
 
-    #run=1
-    run=2
+    run=1
+    #run=2
     #run=3
     
 start= (run-1) * maxperbreak
