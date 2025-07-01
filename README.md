@@ -39,8 +39,8 @@ Last I checked the code will run in python under Anaconda.  Use conda to install
 # More Examples
 If you are running a lot of simulations the simplest way is through the command line.  I like to use a line like this:
 (These are 3 examples of running the exact same simulation and parameters. Simplest first, most efficient last)  
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure=2          --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim  
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_10a"  --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim  
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure=2          --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```  
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_10a"  --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```  
 ```export FIG='10a'; PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sdp=test_rf$FIG/ --dofig="Fig $FIG" --dosim```  
 
 Breakdown:  
