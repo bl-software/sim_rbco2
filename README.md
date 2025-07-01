@@ -43,7 +43,7 @@ If you are running a lot of simulations the simplest way is through the command 
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_10a"  --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```  
 ```export FIG='10a'; PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sdp=test_rf$FIG/ --dofig="Fig $FIG" --dosim```  
 
-Breakdown:  
+### Breakdown:  
 ```export FIG='10a'  -- Sets the figure you are interested into a shell variable for use later in the command```  
 ```PYOPENGL_PLATFORM=egl -- is sometimes necessary for OpenGL code to run properly (required in Ubuntu 24.04 with X11 and Wayland)```  
 ```python mgui.py -- starts the program in default mode  JTB2012, paper 1, first figure you can manually change everything```  
@@ -74,7 +74,7 @@ This will remove the data in the data folder and rerun the sim and gen the figur
 This will simply open the app set to do RBC sims related to paper 1  
 ```PYOPENGL_PLATFORM=egl python mgui.py --simtype=2 --paper=0```  
 
-# Create Sigmoid similar to Fig 6 for any strains  
+## Create Sigmoid similar to Fig 6 for any strains  
 Requires 2 runs for first half of the point and second half of the points. To much data for the computer to run all at once.  
 Edit the file Params/Sim_3__RBCO2/Paper_1__RBCO2/Params_060__Fig_6.py.py  
 -- in extras comment out FIG6  (around line 56)  
@@ -93,7 +93,7 @@ the important part being the _r1_2 - means run 1 of 2.
 then you can use the file df_combine.py to put them together - you'll have to edit df_combine for each experiment to make it work based on your ouput  
 ```python df_combine.py```  
 
-Editing the file; If you leave FIG6 in extras, the system will create Figure 6 exactly as in the paper.  
+Editing the file; If you leave FIG6 in extras, the system will create Figure 6 exactly as in the paper, this automatically sets run=1 and only needs to run a single sim.  
 
 # Some general notes  
 The files in Params contain the default parameters to run the figures in the paper.  
