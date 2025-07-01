@@ -5,12 +5,12 @@ This is also all encompassing and will do JTB2012 and AJP2014 simulations, see b
 # Status as of June 2025:
 The goal was for this code to be production ready.  However, due to funding cuts (2025) this is mostly a code dump in its current state.  Not a finished product.  There will be bugs.  We were in process of separating into 3 code bases, to simplify usage for users.  That code is in the JTB2012 (working) and AJP2014 (somewhat working) and in the development tree (which is now this repo),
 w̶h̶i̶c̶h̶ ̶I̶ ̶p̶l̶a̶n̶ ̶o̶n̶ ̶p̶u̶t̶t̶i̶n̶g̶ ̶i̶n̶t̶o̶ ̶g̶i̶t̶h̶u̶b̶ ̶a̶l̶o̶n̶g̶s̶i̶d̶e̶ ̶t̶h̶e̶s̶e̶ ̶i̶n̶ ̶a̶ ̶d̶e̶v̶e̶l̶o̶p̶m̶e̶n̶t̶ ̶r̶e̶p̶o̶s̶i̶t̶o̶r̶y̶.̶
-The code you are looking at right now is the combined code for all 3 types of simulations in a state prior to the split.  It runs all 3 simulations, however all of the figures in AJP and RBC have not been created.  See the dropdowns in the app for which figures are implemented.  If someone in the future picks up this project, I recommend starting with the sim_rbco2 branch, there is code in the sim_jtb and sim_ajp that needs to be pulled into sim_rbco2 after it works. INSERT GITHUB LINK HERE, as it has been cleaned up a lot, but there are still significant bugs and refactoring to work out.
+The code you are looking at right now is the combined code for all 3 types of simulations in a state prior to the split.  It runs all 3 simulations, however all of the figures in AJP and RBC have not been created.  See the dropdowns in the app for which figures are implemented.  If someone in the future picks up this project, I recommend starting with the sim_rbco2 branch, there is code in the sim_jtb and sim_ajp that needs to be pulled into sim_rbco2 after it works. https://github.com/bl-software is the link to all 3.
 
 If you want to run JTB or AJP simulations, I recommend that you run the version from those github repos. These have the most development completed.  That code needs to be merged back into the development version.
 
 # Setup in Ubuntu Linux (24.04):
-The command "PYOPENGL_PLATFORM=egl python mgui.py --simtype=2" will make the software run, ready for an RBCO2 simulation, assuming the python (venv) and Linux (apt) environments are properly setup, SEE INSTALL FILE.  A python virtual env should be setup, then use the reqs.txt file to install the reqs.  The code requires MATLAB as of this version.  There is code to make it work with Octave, though it is untested, as Octave had an issue when this part was added, the ode15s equivalent solver was not working.  You must pip install the Matlab engine, see Mathworks for instructions.
+The command "PYOPENGL_PLATFORM=egl python mgui.py --simtype=2" will make the software run, ready for an RBCO2 simulation, assuming the python (venv) and Linux (apt) environments are properly setup, See INSTALL file.  A python virtual env should be setup, then use the reqs.txt file to install the reqs.  The code requires MATLAB as of this version.  There is code to make it work with Octave, though it is untested, as Octave had an issue when this part was added, the ode15s equivalent solver was not working.  You must pip install the Matlab engine, see Mathworks for instructions.
 
 The code will run the simulations, but there is no guarantee the figures will match what will be in the RBCO2 Paper.  I know some of the figure numbers have been changed in the final version of the paper and these now differ from the code.
 
@@ -30,7 +30,7 @@ Start the code
 Click "Run Simulation" big red button.
 Create a folder to hold the simulation data.
 Wait, files will be created, Matlab will launch, the sims will run.
-When the sims are complete, you'll see (Run 10/10) on the terminal, hit the "Fig 3a" button and it will create what was at one point figure 3a in the paper.
+When the sims are complete, you'll see (Run 10/10) on the terminal, hit the "Fig 10a" button and it will create figure 10a in the paper.
 
 There are many combinations and batch options.
 
