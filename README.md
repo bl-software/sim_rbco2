@@ -39,16 +39,17 @@ Last I checked the code will run in python under Anaconda.  Use conda to install
 # More Examples
 If you are running a lot of simulations the simplest way is through the command line.  I like to use a line like this:
 (These are 3 examples of running the exact same simulation and parameters. Simplest first, most efficient last)  
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure=2          --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```  
-```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_10a"  --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```  
-```export FIG='10a';<br/>PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sdp=test_rf$FIG/ --dofig="Fig $FIG" --dosim```  
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure=2          --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim  
+```PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_10a"  --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim  
+```export FIG='10a'; PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sdp=test_rf$FIG/ --dofig="Fig $FIG" --dosim```  
+
 Breakdown:  
 ```export FIG='10a'  -- Sets the figure you are interested into a shell variable for use later in the command```  
 ```PYOPENGL_PLATFORM=egl -- is sometimes necessary for OpenGL code to run properly (required in Ubuntu 24.04 with X11 and Wayland)```  
 ```python mgui.py -- starts the program in default mode  JTB2012, paper 1, first figure you can manually change everything```  
 
+next 2 lines are equivalent, just using the exported var   
 ```--simtype=RBCO2 --paper=0 --figure="Fig_10a"```  
-equivalent using the exported var   
 ```--simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sets the simulation type, paper and the figure<br/>```  
 ```---sdp=test_rf$FIG/ -- sets the data folder (sdp=set data path) for the outputs of the simulation```  
 ```--dofig="Fig $FIG" -- tells the system to actually generate the figure after either finding the data in the data directory or after finishing a sim```  
