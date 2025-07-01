@@ -3,7 +3,11 @@ Red Blood Cell simulations supporting RBCO2 Paper.
 This is also all encompassing and will do JTB2012 and AJP2014 simulations, see below.
 
 # Status as of June 2025:
-The goal was for this code to be production ready.  However, due to funding cuts (2025) this is mostly a code dump in its current state.  Not a finished product.  There will be bugs.  We were in process of separating into 3 code bases, to simplify usage for users.  That code is in the JTB2012 (working) and AJP2014 (somewhat working) and in the development tree, which I plan on putting into github alongside these in a development repository.  The code you are looking at right now is the combined code for all 3 types of simulations in a state prior to the split.  It runs all 3 simulations, however all of the figures in AJP and RBC have not been created.  See the dropdowns in the app for which figures are implemented.  If someone in the future picks up this project, I recommend starting with the sim_rbco2 branch, there is code in the sim_jtb and sim_ajp that needs to be pulled into sim_rbco2 after it works. INSERT GITHUB LINK HERE, as it has been cleaned up a lot, but there are still significant bugs and refactoring to work out.
+The goal was for this code to be production ready.  However, due to funding cuts (2025) this is mostly a code dump in its current state.  Not a finished product.  There will be bugs.  We were in process of separating into 3 code bases, to simplify usage for users.  That code is in the JTB2012 (working) and AJP2014 (somewhat working) and in the development tree (which is now this repo),
+
+wͦͦͦͦhͦͦͦiͦͦͦcͦͦͦhͦͦͦ ͦͦͦIͦͦͦ ͦͦͦpͦͦͦlͦͦͦaͦͦͦnͦͦͦ ͦͦͦoͦͦͦnͦͦͦ ͦͦͦpͦͦͦuͦͦͦtͦͦͦtͦͦͦiͦͦͦnͦͦͦgͦͦͦ ͦͦͦiͦͦͦnͦͦͦtͦͦͦoͦͦͦ ͦͦͦgͦͦͦiͦͦͦtͦͦͦhͦͦͦuͦͦͦbͦͦͦ ͦͦͦaͦͦͦlͦͦͦoͦͦͦnͦͦͦgͦͦͦsͦͦͦiͦͦͦdͦͦͦeͦͦͦ ͦͦͦtͦͦͦhͦͦͦeͦͦͦsͦͦͦeͦͦͦ ͦͦͦiͦͦͦnͦͦͦ ͦͦͦaͦͦͦ ͦͦͦdͦͦͦeͦͦͦvͦͦͦeͦͦͦlͦͦͦoͦͦͦpͦͦͦmͦͦͦeͦͦͦnͦͦͦtͦͦͦ ͦͦͦrͦͦͦeͦͦͦpͦͦͦoͦͦͦsͦͦͦiͦͦͦtͦͦͦoͦͦͦrͦͦͦyͦͦͦ.ͦͦͦ
+
+The code you are looking at right now is the combined code for all 3 types of simulations in a state prior to the split.  It runs all 3 simulations, however all of the figures in AJP and RBC have not been created.  See the dropdowns in the app for which figures are implemented.  If someone in the future picks up this project, I recommend starting with the sim_rbco2 branch, there is code in the sim_jtb and sim_ajp that needs to be pulled into sim_rbco2 after it works. INSERT GITHUB LINK HERE, as it has been cleaned up a lot, but there are still significant bugs and refactoring to work out.
 
 If you want to run JTB or AJP simulations, I recommend that you run the version from those github repos. These have the most development completed.  That code needs to be merged back into the development version.
 
@@ -37,21 +41,21 @@ Last I checked the code will run in python under Anaconda.  Use conda to install
 # More Examples
 If you are running a lot of simulations the simplest way is through the command line.  I like to use a line like this:
 
-Here are 3 examples of running the exact same simulation and parameters. Simplest first, most efficient last
-```                  PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure=2          --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```
-```                  PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_10a"  --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```
-```export FIG='10a'; PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sdp=test_rf$FIG/ --dofig="Fig $FIG" --dosim```
+Here are 3 examples of running the exact same simulation and parameters. Simplest first, most efficient last  
+```                  PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure=2          --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```  
+```                  PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_10a"  --sdp=test_rf10a/  --dofig="Fig 10a"  --dosim```  
+```export FIG='10a'; PYOPENGL_PLATFORM=egl python mgui.py --simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sdp=test_rf$FIG/ --dofig="Fig $FIG" --dosim```  
 Breakdown:
-```export FIG='10a'  -- Sets the figure you are interested into a shell variable for use later in the command```
-```PYOPENGL_PLATFORM=egl -- is sometimes necessary for OpenGL code to run properly (required in Ubuntu 24.04 with X11 and Wayland)```
-```python mgui.py -- starts the program in default mode  JTB2012, paper 1, first figure you can manually change everything```
+```export FIG='10a'  -- Sets the figure you are interested into a shell variable for use later in the command```  
+```PYOPENGL_PLATFORM=egl -- is sometimes necessary for OpenGL code to run properly (required in Ubuntu 24.04 with X11 and Wayland)```  
+```python mgui.py -- starts the program in default mode  JTB2012, paper 1, first figure you can manually change everything```  
 
-```--simtype=RBCO2 --paper=0 --figure="Fig_10a"```
-equivalent using the exported var 
+```--simtype=RBCO2 --paper=0 --figure="Fig_10a"```  
+equivalent using the exported var   
 ```--simtype=RBCO2 --paper=0 --figure="Fig_$FIG" --sets the simulation type, paper and the figure<br/>
-```---sdp=test_rf$FIG/ -- sets the data folder (sdp=set data path) for the outputs of the simulation```
-```--dofig="Fig $FIG" -- tells the system to actually generate the figure after either finding the data in the data directory or after finishing a sim```
-```--dosim -- as long as you set an sdp then automatically start running the sim, this will delete previous code (with dialog boxes to confirm EVERY file```
+```---sdp=test_rf$FIG/ -- sets the data folder (sdp=set data path) for the outputs of the simulation```  
+```--dofig="Fig $FIG" -- tells the system to actually generate the figure after either finding the data in the data directory or after finishing a sim```  
+```--dosim -- as long as you set an sdp then automatically start running the sim, this will delete previous code (with dialog boxes to confirm EVERY file```  
 
 To automatically run the sims for figures 10a-d
 this creates the data folder, runs the sim, and generates the figure
